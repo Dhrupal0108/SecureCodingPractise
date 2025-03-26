@@ -1,0 +1,7 @@
+<h2>Patient Dashboard</h2>
+
+<div *ngIf="patientData">
+  <p><strong>Name:</strong> {{ patientData.FirstName }} {{ patientData.LastName }}</p>
+  <p><strong>Email:</strong> {{ patientData.Email }}</p>
+  <p><strong>Medical Record:</strong> {{ patientData.medicalRecord }}</p>
+</div>

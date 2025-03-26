@@ -1,0 +1,50 @@
+<mat-toolbar color="primary" class="header">
+  <span>Healthcare POC - Login</span>
+</mat-toolbar>
+
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-title class="title">Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input 
+            matInput 
+            type="email" 
+            formControlName="email" 
+            autocomplete="off" 
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+            required />
+          <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            Please enter a valid email.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input 
+            matInput 
+            type="password" 
+            formControlName="password" 
+            autocomplete="new-password" 
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+            required />
+          <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Password must be at least 6 characters.
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="login-btn" [disabled]="loginForm.invalid">
+          Login
+        </button>
+      </form>
+
+      <mat-error *ngIf="loginError" class="error-msg">{{ loginError }}</mat-error>
+    </mat-card-content>
+  </mat-card>
+</div>

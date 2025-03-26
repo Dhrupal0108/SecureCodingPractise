@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span>Doctor Dashboard - Patients</span>
+</mat-toolbar>
+
+<mat-table [dataSource]="patients">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let patient"> {{ patient.FirstName }} {{ patient.LastName }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let patient"> {{ patient.Email }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let patient">
+      <button mat-button color="accent" (click)="viewPatientDetails(patient.Id)">View</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['name', 'email', 'actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'email', 'actions'];"></mat-row>
+</mat-table>

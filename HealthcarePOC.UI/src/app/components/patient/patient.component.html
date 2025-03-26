@@ -1,0 +1,15 @@
+<p>Patient registration completed. Check browser console!</p>
+
+<div *ngIf="patientResponse">
+  <p><strong>Patient Registered Details:</strong></p>
+  <p><strong>Name:</strong> {{ patientResponse.FirstName }} {{ patientResponse.LastName }}</p>
+  <p><strong>Email:</strong> {{ patientResponse.Email }}</p>
+
+  <p *ngIf="patientResponse.medicalRecord; else noSensitiveData">
+    ⚠️ Sensitive Medical Record: {{ patientResponse.medicalRecord }}
+  </p>
+
+  <ng-template #noSensitiveData>
+    <p>🔒 Sensitive Data Protected (Not Displayed)</p>
+  </ng-template>
+</div>
