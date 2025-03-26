@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "h0E1ehcbgusuPlVp70tTjlRW0+Y8sebRxODlwLCYi6I=",
+  "Source": "HealthcarePOC.API",
+  "BasePath": "_content/HealthcarePOC.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
