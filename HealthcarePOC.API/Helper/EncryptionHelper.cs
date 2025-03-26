@@ -73,7 +73,6 @@ public class EncryptionService
             pemFormattedKey.AppendLine(base64PublicKey.Substring(i, Math.Min(64, base64PublicKey.Length - i)));
         }
         pemFormattedKey.AppendLine("-----END PUBLIC KEY-----");
-        Console.WriteLine("Public Key:\n" + pemFormattedKey.ToString());
 
         return pemFormattedKey.ToString();
     }
